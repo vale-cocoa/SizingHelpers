@@ -39,7 +39,7 @@ struct EqualSideSizes: ViewModifier {
 }
 
 extension EnvironmentValues {
-    var sideSize: CGFloat? {
+    public var sideSize: CGFloat? {
         get { self[SideSizeKey.self] }
         set { self[SideSizeKey.self] = newValue }
     }
@@ -84,7 +84,7 @@ struct EqualViewSizes: ViewModifier {
 }
 
 extension EnvironmentValues {
-    var viewSize: CGSize? {
+    public var viewSize: CGSize? {
         get { self[ViewSizeKey.self] }
         set { self[ViewSizeKey.self] = newValue }
     }
