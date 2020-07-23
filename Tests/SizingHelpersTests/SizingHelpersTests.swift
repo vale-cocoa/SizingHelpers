@@ -8,8 +8,5 @@ final class SizingHelpersTests: XCTestCase {
         // results.
         XCTAssertEqual(SizingHelpers().text, "Hello, World!")
     }
-
-    static var allTests = [
-        ("testExample", testExample),
-    ]
+    
 }

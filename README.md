@@ -1,3 +1,4 @@
 # SizingHelpers
 
-A description of this package.
+A set of SwiftUI helpers for sizing views.
+
