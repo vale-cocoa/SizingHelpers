@@ -1,6 +1,6 @@
 # SizingHelpers
 
-A set helpers for sizing SwiftUI views upon their layout.
+A set helpers for sizing SwiftUI views.
 
 ## Introduction
 Due to declarative and reactive nature of SwiftUI, its layout system might become tricky when it comes to sizing views and their subviews. 

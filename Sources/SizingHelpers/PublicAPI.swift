@@ -49,7 +49,7 @@ public struct Preferenced<P: PreferenceKey, Content: View>: View where P.Value: 
         self.content = content
     }
     
-    var body: some View {
+    public var body: some View {
         content(value)
             .onPreferenceChange(P.self) { self.value = $0 }
     }
@@ -58,43 +58,43 @@ public struct Preferenced<P: PreferenceKey, Content: View>: View where P.Value: 
 
 // MARK: - PreferenceKeys
 public struct IdentifiedViewSizePreference<ID: Hashable>: PreferenceKey {
-    typealias Value = [ID : CGSize]
+    public typealias Value = [ID : CGSize]
     
-    static var defaultValue: Value { Value() }
+    public static var defaultValue: Value { Value() }
     
-    static func reduce(value: inout Value, nextValue: () -> Value) {
+    public static func reduce(value: inout Value, nextValue: () -> Value) {
         value.merge(nextValue(), uniquingKeysWith: { $1 })
     }
     
 }
 
 public struct ViewSizePreference: PreferenceKey {
-    typealias Value = [CGSize]
+    public typealias Value = [CGSize]
     
-    static let defaultValue: Value = Value()
+    public static let defaultValue: Value = Value()
     
-    static func reduce(value: inout Value, nextValue: () -> Value) {
+    public static func reduce(value: inout Value, nextValue: () -> Value) {
         value.append(contentsOf: nextValue())
     }
     
 }
 
 public struct IdentifiedViewSideSizePreference<ID: Hashable>: PreferenceKey {
-    typealias Value = [ID : CGFloat]
+    public typealias Value = [ID : CGFloat]
     
-    static var defaultValue: Value { Value() }
+    public static var defaultValue: Value { Value() }
     
-    static func reduce(value: inout Value, nextValue: () -> Value) {
+    public static func reduce(value: inout Value, nextValue: () -> Value) {
         value.merge(nextValue(), uniquingKeysWith: { $1 })
     }
 }
 
 public struct ViewSideSizePreference: PreferenceKey {
-    typealias Value = [CGFloat]
+    public typealias Value = [CGFloat]
     
-    static let defaultValue: Value = Value()
+    public static let defaultValue: Value = Value()
     
-    static func reduce(value: inout Value, nextValue: () -> Value) {
+    public static func reduce(value: inout Value, nextValue: () -> Value) {
         value.append(contentsOf: nextValue())
     }
     
